@@ -18,6 +18,8 @@ function Speler(props) {
         textAlign: 'center'
     }
 
+
+
     return <div style={specialStyle}>
         <h4>{speler.naam}</h4>
         <div>{speler.bijnaam || 'bijnaam onbekend'}</div>
@@ -31,18 +33,24 @@ function Speler(props) {
 function Clubs(props){
     const {clubs}=props
 
+    const listItemsStyle = {
+        display: 'inline-block',
+        margin: '0 10px'
+    }
+
     if (clubs==null)
         return <p>geen andere clubs</p>
     else
         return<div>
             <p>Clubs</p>
-            <ul>{clubs.map((c, index) => <Club club={c} key={index}/>)}</ul>
+            <ul style={listItemsStyle}>{clubs.map((c, index) => <Club club={c} key={index}/>)}</ul>
     </div>
 
 }
 
 function Club(props){
     const {club}=props
+
 
     return <li>{club}</li>
 }
