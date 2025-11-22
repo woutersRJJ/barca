@@ -3,7 +3,8 @@ import {LEGENDS_DATA} from "../data/data";
 export function Legends() {
     return <div>
         <h2>Legends</h2>
-        {LEGENDS_DATA.sort((a,b)    =>b.geboortejaar - a.geboortejaar).map((l, index) => <Speler speler={l} key={index}/>)}
+        {LEGENDS_DATA.sort((a, b) => b.geboortejaar - a.geboortejaar).map((l, index) => <Speler speler={l}
+                                                                                                key={index}/>)}
     </div>
 }
 
@@ -11,14 +12,12 @@ function Speler(props) {
     const {speler} = props
     const specialStyle = {
         backgroundColor: 'pink',
-        width: '25%',
+        width: '45%',
         float: 'left',
         margin: '2vw',
         borderRadius: '4px',
         textAlign: 'center'
     }
-
-
 
     return <div style={specialStyle}>
         <h4>{speler.naam}</h4>
@@ -30,27 +29,26 @@ function Speler(props) {
     </div>
 }
 
-function Clubs(props){
-    const {clubs}=props
+function Clubs(props) {
+    const {clubs} = props
 
     const listItemsStyle = {
         display: 'inline-block',
-        margin: '0 10px'
+        margin: '0 10px 10px 0',
+        textAlign: 'left'
     }
 
-    if (clubs==null)
+    if (clubs == null)
         return <p>geen andere clubs</p>
     else
-        return<div>
+        return <div>
             <p>Clubs</p>
             <ul style={listItemsStyle}>{clubs.map((c, index) => <Club club={c} key={index}/>)}</ul>
-    </div>
-
+        </div>
 }
 
-function Club(props){
-    const {club}=props
-
+function Club(props) {
+    const {club} = props
 
     return <li>{club}</li>
 }
