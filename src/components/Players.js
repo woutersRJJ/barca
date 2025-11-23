@@ -1,9 +1,9 @@
-import {LEGENDS_DATA} from "../data/data";
+import {PLAYERS_DATA} from "../data/data";
 
-export function Legends() {
+export function Players() {
     return <div>
-        <h2>Legends</h2>
-            {LEGENDS_DATA.sort((a, b) => a.naam.localeCompare(b.naam)).map((l, index) => <Speler speler={l} key={index}/>)}
+        <h2>Players</h2>
+        {PLAYERS_DATA.sort((a, b) => a.naam.localeCompare(b.naam)).map((p, index) => <Speler speler={p} key={index}/>)}
     </div>
 }
 
